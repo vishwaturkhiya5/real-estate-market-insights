@@ -1,0 +1,15 @@
+# Large local data and generated databases
+data/*.csv
+data/*.zip
+*.db
+*.sqlite
+*.sqlite3
+
+# Excel temporary files
+~$*.xlsx
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+
