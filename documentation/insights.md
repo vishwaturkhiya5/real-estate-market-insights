@@ -16,7 +16,7 @@ All additive market totals use `PROPERTY_TYPE = 'All Residential'` and periods e
 
 7. **Homes took longer to sell.** The homes-sold-weighted median days on market increased 6.15%, from 49.47 days in October 2024 to 52.52 days in October 2025, consistent with slower transaction activity.
 
-8. **Sale-to-list performance improved modestly.** The weighted sale-to-list ratio rose from 95.48% to 96.42%, an increase of 0.94 percentage points. Sellers still accepted about 3.6% below list price on average in this city-weighted measure.
+8. **Sale-to-list performance improved modestly.** The weighted sale-to-list ratio rose from 95.48% to 96.42%, an increase of 0.94 percentage points. The weighted sale-to-list ratio indicates that sale prices averaged about 3.6% below list prices in this city-weighted measure.
 
 9. **About one quarter of sales closed above list.** The October 2025 weighted sold-above-list rate was 25.69%, while the inventory-weighted price-drop rate was 30.27%. These measures show that competitive bidding and seller price reductions coexisted across different markets.
 
