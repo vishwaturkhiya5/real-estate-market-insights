@@ -1,4 +1,4 @@
-# Data dictionary
+# Data Dictionary
 
 The raw SQLite landing table stores every field as text. `data_cleaning.sql` converts them to the analytical types below while preserving blanks as `NULL`.
 
@@ -6,7 +6,7 @@ The raw SQLite landing table stores every field as text. `data_cleaning.sql` con
 |---|---|---|
 | PERIOD_BEGIN | Date | First day of monthly period |
 | PERIOD_END | Date | Last day of monthly period |
-| PERIOD_DURATION | Integer | Period duration; 30 for every row |
+| PERIOD_DURATION | Integer | Source-provided duration of the monthly period |
 | REGION_TYPE | Text | Geographic level; `place` throughout |
 | REGION_TYPE_ID | Integer | Source geography-type ID |
 | TABLE_ID | Integer | Stable source market identifier |
@@ -61,13 +61,12 @@ The raw SQLite landing table stores every field as text. `data_cleaning.sql` con
 | OFF_MARKET_IN_TWO_WEEKS_YOY | Real | Decimal YoY change |
 | PARENT_METRO_REGION | Text | Parent metro label |
 | PARENT_METRO_REGION_METRO_CODE | Integer | Parent metro code |
-| LAST_UPDATED | Text/Timestamp | Source extract timestamp |
+| LAST_UPDATED | Text/Timestamp | Source extract or update timestamp |
 
-## KPI formulas
+## KPI Formulas
 
-- Weighted city-level price: `SUM(MEDIAN_SALE_PRICE × HOMES_SOLD) / SUM(HOMES_SOLD)`.
-- Weighted DOM and sale-to-list: use `HOMES_SOLD` as the weight.
+- Weighted city-level sale price: `SUM(MEDIAN_SALE_PRICE × HOMES_SOLD) / SUM(HOMES_SOLD)`.
+- Weighted days on market and sale-to-list ratio: use `HOMES_SOLD` as the weight.
 - Weighted months of supply and price drops: use `INVENTORY` as the weight.
-- YoY price growth: `current comparable weighted price / prior-year comparable weighted price - 1`.
-- Total homes sold: `SUM(HOMES_SOLD)` after filtering to All Residential.
-
+- YoY price growth: `(current comparable-period weighted price / prior-year comparable-period weighted price) - 1`, using the same geography and property-type population in both periods.
+- Total homes sold: `SUM(HOMES_SOLD)` after filtering to `All Residential`.
